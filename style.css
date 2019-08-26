@@ -156,6 +156,9 @@ body::-webkit-scrollbar{
     display: none;
 }
 @media screen and (max-width: 899px){
+    .plan{
+        padding-bottom: calc(30vh - 35px);
+    }
     .plan .meta{
         padding: 0px 20px 0px 20px;
     }
