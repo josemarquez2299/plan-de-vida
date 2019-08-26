@@ -126,6 +126,11 @@ body, html, *{
     cursor: pointer;
     transition: .5s;
 }
+.plan .meta:active{
+    background: #efefef;
+    cursor: pointer;
+    transition: .5s;
+}
 .plan .meta:hover .grafico .line::before{
     background-color: #3d3d3d;
     transition: .5s;
