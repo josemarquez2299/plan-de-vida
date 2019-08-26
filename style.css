@@ -1,0 +1,174 @@
+body, html, *{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+.ilustraciones{
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    animation: ilustraciones 20s infinite ease;
+    clip-path: polygon(0 0, 30% 0, 100% 0, 100% 100%, 30% 100%, 0 99%, 0 57%, 0 35%);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url(01.jpg);
+    z-index: 3;
+}
+.cabecera{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px calc(40% + 20px) 5px 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 3px 40px -10px rgba(148,148,148,1);
+    -moz-box-shadow: 0px 3px 40px -10px rgba(148,148,148,1);
+    box-shadow: 0px 3px 40px -10px rgba(148,148,148,1);
+}
+.cabecera .titulo{
+    font-weight: bold;
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+.cabecera .titulo span{
+    font-size: 12pt;
+}
+.cabecera ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+}
+.cabecera ul .fecha{
+    width: 15%;
+}
+.cabecera ul .espacio{
+    width: 5%;
+}
+.cabecera ul .meta{
+    width: 80%;
+    padding-left: 20px;
+}
+@keyframes ilustraciones{
+    0%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20% 62%);
+    }
+    20%{
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 31% 100%, 0 62%);
+    }
+    40%{
+        clip-path: polygon(9% 0, 100% 0, 100% 100%, 10% 100%, 25% 40%);
+    }
+    60%{
+        clip-path: polygon(29% 0, 100% 0, 100% 100%, 17% 100%, 5% 43%);
+    }
+    80%{
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 31% 100%, 0 62%);
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20% 62%);
+    }
+}
+
+.plan{
+    width: 100%;
+    z-index: 1;
+    padding-top: 75px;
+}
+.plan .meta{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0px calc(40% + 20px) 0px 20px;
+    transition: .5s;
+}
+.plan .meta .fecha{
+    width: 15%;
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 80px;
+    padding-top: 20px;
+}
+.plan .meta .fecha span{
+    font-weight: lighter;
+    font-size: 18pt;
+}
+.plan .meta .desc{
+    width: 80%;
+    font-weight: lighter;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+.plan .meta .desc h2{
+    width: 80%;
+    font-weight: lighter;
+    font-size: 18pt;
+}
+.plan .meta .grafico{
+    width: 5%;
+}
+.plan .meta .grafico .line{
+    background: #3d3d3d;
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.plan .meta .grafico .line::before{
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    border: 2px solid #3d3d3d;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%);
+    transition: .5s;
+}
+.plan .meta:hover{
+    background: #efefef;
+    cursor: pointer;
+    transition: .5s;
+}
+.plan .meta:hover .grafico .line::before{
+    background-color: #3d3d3d;
+    transition: .5s;
+}
+.plan .meta.hecho{
+    text-decoration: line-through;
+    background: #efefef;
+}
+.plan .meta.hecho .grafico .line::before{
+    background-color: #3d3d3d;
+}
+.scrollbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 4;
+}
+.scrollbar .porcentaje{
+    background-color: #3d3d3d;
+    min-height: 1px;
+    max-height: 100%;
+    transition: .5s;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
